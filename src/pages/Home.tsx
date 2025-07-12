@@ -181,9 +181,6 @@ const Home = () => {
                 <div className="text-maroon-600 mb-4 flex justify-center">
                   {feature.icon}
                 </div>
-                <div className="text-yellow-400 mb-4 flex justify-center">
-                  {feature.icon}
-                </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-maroon-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm sm:text-base">{feature.description}</p>
               </motion.div>
@@ -192,116 +189,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* App Preview Section */}
-      <section className="py-20 bg-maroon-900">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-2xl sm:text-4xl font-bold text-white mb-6">
-                Book Your Turf in <span className="gradient-text">3 Simple Steps</span>
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-maroon-900">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Download the App</h3>
-                    <p className="text-gray-300 text-sm sm:text-base">Get FC Marina app from Play Store or App Store</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-maroon-900">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Choose Your Turf</h3>
-                    <p className="text-gray-300 text-sm sm:text-base">Select from 12premium turfs across Chennai</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-maroon-900">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Book & Play</h3>
-                    <p className="text-gray-300 text-sm sm:text-base">Secure payment and instant confirmation</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="relative">
-                <div className="w-48 sm:w-64 h-72 sm:h-96 bg-white rounded-3xl shadow-2xl mx-auto p-4">
-                  <div className="w-full h-full bg-gradient-to-br from-maroon-600 to-maroon-800 rounded-2xl flex items-center justify-center">
-                    <Smartphone className="w-12 sm:w-16 h-12 sm:h-16 text-white" />
-                  </div>
-                </div>
-                <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-16 sm:w-20 h-16 sm:h-20 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <Star className="w-6 sm:w-8 h-6 sm:h-8 text-maroon-900" />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-900 relative">
-        {/* 3D Background for Testimonials */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="floating-shapes">
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-          </div>
-        </div>
-        
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 text-shadow">What Our Customers Say</h2>
-            <p className="text-lg sm:text-xl text-white/90 text-shadow">Join thousands of satisfied customers</p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="carousel-container">
-              <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="carousel-slide">
-                    <div className="text-center p-4 sm:p-8 bg-white rounded-xl shadow-lg mx-2 sm:mx-4">
-                      <div className="flex justify-center mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                      <p className="text-sm sm:text-lg text-gray-600 mb-4 sm:mb-6">"{testimonial.review}"</p>
-                      <h4 className="text-lg sm:text-xl font-semibold text-maroon-900">{testimonial.name}</h4>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
+      {/* Gallery Section - Moved after Features */}
       <section id="gallery-section" className="py-20 bg-gray-100 relative">
         <div className="container mx-auto px-4">
           <motion.div
@@ -380,6 +268,116 @@ const Home = () => {
             >
               View Full Gallery
             </motion.button>
+          </div>
+        </div>
+      </section>
+
+      {/* App Preview Section - Refined without star icon */}
+      <section className="py-20 bg-maroon-900">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-2xl sm:text-4xl font-bold text-white mb-6">
+                Book Your Turf in <span className="gradient-text">3 Simple Steps</span>
+              </h2>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-maroon-900">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Download the App</h3>
+                    <p className="text-gray-300 text-sm sm:text-base">Get FC Marina app from Play Store or App Store</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-maroon-900">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Choose Your Turf</h3>
+                    <p className="text-gray-300 text-sm sm:text-base">Select from 12 premium turfs across Chennai</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-maroon-900">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Book & Play</h3>
+                    <p className="text-gray-300 text-sm sm:text-base">Secure payment and instant confirmation</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="relative">
+                <div className="w-48 sm:w-64 h-72 sm:h-96 bg-white rounded-3xl shadow-2xl mx-auto p-4">
+                  <div className="w-full h-full bg-gradient-to-br from-maroon-600 to-maroon-800 rounded-2xl overflow-hidden">
+                    <img
+                      src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=300&h=600&fit=crop"
+                      alt="FC Marina Mobile App Screenshot"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-900 relative">
+        {/* 3D Background for Testimonials */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="floating-shapes">
+            <div className="shape"></div>
+            <div className="shape"></div>
+            <div className="shape"></div>
+            <div className="shape"></div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 text-shadow">What Our Customers Say</h2>
+            <p className="text-lg sm:text-xl text-white/90 text-shadow">Join thousands of satisfied customers</p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="carousel-container">
+              <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="carousel-slide">
+                    <div className="text-center p-4 sm:p-8 bg-white rounded-xl shadow-lg mx-2 sm:mx-4">
+                      <div className="flex justify-center mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                      <p className="text-sm sm:text-lg text-gray-600 mb-4 sm:mb-6">"{testimonial.review}"</p>
+                      <h4 className="text-lg sm:text-xl font-semibold text-maroon-900">{testimonial.name}</h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
