@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Percent, Clock, Star, ChevronUp, ChevronDown, Gift, Zap, Crown, Fire } from 'lucide-react';
+import { Percent, Clock, Star, ChevronUp, ChevronDown, Gift, Zap, Crown, Siren as Fire } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DiscountSidebar = () => {
