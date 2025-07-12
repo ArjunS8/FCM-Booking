@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Download, Star, Users, MapPin, Clock, Shield, Smartphone } from 'lucide-react';
 
 const Home = () => {
@@ -198,7 +199,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-2xl sm:text-4xl font-bold text-maroon-900 mb-4">Our Premium Facilities</h2>
+            <h2 className="text-2xl sm:text-4xl font-bold text-maroon-900 mb-4">Our Gallery</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Take a look at our world-class football turf facilities across Chennai
             </p>
@@ -255,19 +256,15 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-12">
-            <motion.button
-              onClick={() => {
-                const gallerySection = document.getElementById('gallery-section');
-                if (gallerySection) {
-                  gallerySection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+            <Link to="/gallery">
+              <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-maroon-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon-700 transition-colors duration-300 cursor-pointer"
             >
               View Full Gallery
-            </motion.button>
+              </motion.button>
+            </Link>
           </div>
         </div>
       </section>
