@@ -1,184 +1,431 @@
-import React, { useState } from 'react';
-import { Percent, Clock, Star, ChevronUp, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Percent, Clock, Star, ChevronUp, ChevronDown, Gift, Zap, Crown, Fire } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DiscountSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredOffer, setHoveredOffer] = useState<number | null>(null);
+  const [pulseAnimation, setPulseAnimation] = useState(true);
+  const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const discounts = [
     {
-      icon: <Percent className="w-5 h-5" />,
-      title: "30% OFF",
+      icon: <Fire className="w-5 h-5" />,
+      title: "🔥 FLASH SALE",
+      subtitle: "40% OFF",
       description: "Weekend Bookings",
-      code: "WEEKEND30"
+      code: "FLASH40",
+      color: "from-red-500 to-orange-500",
+      bgColor: "bg-gradient-to-r from-red-50 to-orange-50",
+      badge: "LIMITED",
+      timeLeft: "2 hours left!"
     },
     {
-      icon: <Clock className="w-5 h-5" />,
-      title: "Buy 2 Get 1 Free",
-      description: "Morning Slots",
-      code: "MORNING3"
+      icon: <Crown className="w-5 h-5" />,
+      title: "👑 VIP DEAL",
+      subtitle: "Buy 2 Get 1 FREE",
+      description: "Premium Morning Slots",
+      code: "VIP3FOR2",
+      color: "from-purple-500 to-pink-500",
+      bgColor: "bg-gradient-to-r from-purple-50 to-pink-50",
+      badge: "EXCLUSIVE",
+      timeLeft: "Today only!"
     },
     {
       icon: <Star className="w-5 h-5" />,
-      title: "25% OFF",
+      title: "⭐ NEWCOMER",
+      subtitle: "50% OFF",
       description: "First Time Users",
-      code: "NEWUSER25"
+      code: "WELCOME50",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-gradient-to-r from-blue-50 to-cyan-50",
+      badge: "NEW USER",
+      timeLeft: "Valid for 7 days"
     },
     {
-      icon: <Percent className="w-5 h-5" />,
-      title: "20% OFF",
-      description: "Group Bookings",
-      code: "GROUP20"
+      icon: <Zap className="w-5 h-5" />,
+      title: "⚡ POWER HOUR",
+      subtitle: "30% OFF",
+      description: "Group Bookings (5+)",
+      code: "POWER30",
+      color: "from-yellow-500 to-amber-500",
+      bgColor: "bg-gradient-to-r from-yellow-50 to-amber-50",
+      badge: "GROUP",
+      timeLeft: "This week only"
     },
     {
-      icon: <Clock className="w-5 h-5" />,
-      title: "15% OFF",
-      description: "Monthly Pass",
-      code: "MONTHLY15"
+      icon: <Gift className="w-5 h-5" />,
+      title: "🎁 LOYALTY",
+      subtitle: "25% OFF",
+      description: "Monthly Pass Holders",
+      code: "LOYAL25",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-gradient-to-r from-green-50 to-emerald-50",
+      badge: "MEMBERS",
+      timeLeft: "Ongoing benefit"
     }
   ];
+
+  // Pulse animation control
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPulseAnimation(prev => !prev);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const toggleOffers = () => {
     setIsOpen(!isOpen);
   };
 
+  const copyCode = async (code: string) => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopiedCode(code);
+      setTimeout(() => setCopiedCode(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy code:', err);
+    }
+  };
+
   return (
     <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
       <div className="relative">
-        {/* Toggle Button - Always Visible */}
-        <motion.button
-          onClick={toggleOffers}
-          className="bg-gradient-to-r from-maroon-900 to-maroon-800 text-white p-4 rounded-l-2xl hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 cursor-pointer shadow-lg border-2 border-yellow-400/20 flex items-center space-x-2"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        {/* Floating Trigger Button with Advanced Animations */}
+        <motion.div
+          className="relative"
           animate={{
-            x: isOpen ? -256 : 0,
+            x: isOpen ? -320 : 0,
           }}
           transition={{
             type: "spring",
             stiffness: 300,
-            damping: 30
+            damping: 25,
+            duration: 0.6
           }}
         >
-          <span className="text-yellow-400 font-bold text-sm whitespace-nowrap">Special Offers</span>
-          {isOpen ? (
-            <ChevronDown className="w-4 h-4 text-yellow-400" />
-          ) : (
-            <ChevronUp className="w-4 h-4 text-yellow-400" />
-          )}
-        </motion.button>
+          {/* Pulsing Ring Animation */}
+          <motion.div
+            className="absolute inset-0 rounded-l-2xl"
+            animate={{
+              scale: pulseAnimation ? [1, 1.1, 1] : 1,
+              opacity: pulseAnimation ? [0.5, 0.8, 0.5] : 0.5,
+            }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+            style={{
+              background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+              filter: 'blur(8px)',
+            }}
+          />
 
-        {/* Offers Panel - Gradual Expansion with Floating Effect */}
+          {/* Main Trigger Button */}
+          <motion.button
+            onClick={toggleOffers}
+            className="relative bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white p-4 rounded-l-2xl hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 cursor-pointer shadow-2xl border-2 border-yellow-400/30 flex items-center space-x-3 overflow-hidden"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 20px 40px rgba(255, 215, 0, 0.3)"
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {/* Animated Background Gradient */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"
+              animate={{
+                x: isOpen ? ['-100%', '100%'] : ['100%', '-100%'],
+              }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
+              }}
+            />
+
+            {/* Content */}
+            <div className="relative z-10 flex items-center space-x-3">
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Gift className="w-6 h-6 text-yellow-400" />
+              </motion.div>
+              
+              <div className="text-left">
+                <motion.div 
+                  className="text-yellow-400 font-bold text-sm whitespace-nowrap"
+                  animate={{ 
+                    scale: pulseAnimation ? [1, 1.05, 1] : 1,
+                  }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  🎯 Special Offers
+                </motion.div>
+                <div className="text-yellow-300 text-xs">
+                  {isOpen ? 'Close deals' : 'Tap for deals!'}
+                </div>
+              </div>
+
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {isOpen ? (
+                  <ChevronDown className="w-5 h-5 text-yellow-400" />
+                ) : (
+                  <ChevronUp className="w-5 h-5 text-yellow-400" />
+                )}
+              </motion.div>
+            </div>
+
+            {/* Notification Badge */}
+            <motion.div
+              className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+              animate={{
+                scale: pulseAnimation ? [1, 1.2, 1] : 1,
+              }}
+              transition={{ duration: 1, repeat: Infinity }}
+            >
+              5
+            </motion.div>
+          </motion.button>
+        </motion.div>
+
+        {/* Innovative Offers Panel */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ 
                 opacity: 0, 
-                scale: 0.8,
-                x: 100,
-                y: 50
+                scale: 0.3,
+                x: 150,
+                y: 100,
+                rotateY: -90
               }}
               animate={{ 
                 opacity: 1, 
                 scale: 1,
                 x: 0,
-                y: 0
+                y: 0,
+                rotateY: 0
               }}
               exit={{ 
                 opacity: 0, 
-                scale: 0.8,
-                x: 100,
-                y: 50
+                scale: 0.3,
+                x: 150,
+                y: 100,
+                rotateY: 90
               }}
               transition={{ 
                 type: "spring", 
-                stiffness: 300, 
-                damping: 25,
-                duration: 0.6,
-                opacity: { duration: 0.4 },
-                scale: { duration: 0.5 },
-                x: { duration: 0.6 },
-                y: { duration: 0.6 }
+                stiffness: 200, 
+                damping: 20,
+                duration: 0.8,
+                opacity: { duration: 0.5 },
+                scale: { duration: 0.6 },
+                rotateY: { duration: 0.7 }
               }}
-              className="absolute bottom-0 right-16 bg-gradient-to-br from-maroon-900 to-maroon-800 text-white rounded-2xl shadow-2xl border-2 border-yellow-400/20 w-64"
+              className="absolute bottom-0 right-20 w-80 max-h-[500px] overflow-hidden"
+              style={{ perspective: '1000px' }}
             >
-              {/* Header with Centered Text */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.4 }}
-                className="p-4 border-b border-yellow-400/30 bg-gradient-to-r from-yellow-400/10 to-yellow-500/10 rounded-t-2xl text-center"
-              >
-                <h3 className="text-lg font-bold text-yellow-400 flex items-center justify-center space-x-2">
-                  <span>🎯</span>
-                  <span>Special Offers</span>
-                  <span>🎯</span>
-                </h3>
-                <p className="text-xs text-yellow-300 mt-1">Limited Time Only!</p>
-              </motion.div>
-              
-              {/* Content with Floating Upward Animation */}
-              <div className="p-4 space-y-3 max-h-80 overflow-y-auto">
-                {discounts.map((discount, index) => (
+              {/* Main Panel Container */}
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+                {/* Animated Header */}
+                <motion.div
+                  initial={{ opacity: 0, y: -30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="relative p-6 bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white text-center overflow-hidden"
+                >
+                  {/* Animated Background Pattern */}
                   <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ 
-                      delay: 0.3 + (index * 0.1),
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 20
+                    className="absolute inset-0 opacity-20"
+                    animate={{
+                      backgroundPosition: ['0% 0%', '100% 100%'],
                     }}
-                    className="bg-gradient-to-r from-maroon-800/80 to-maroon-700/80 rounded-lg p-3 hover:from-maroon-700 hover:to-maroon-600 transition-all duration-300 cursor-pointer border border-yellow-400/20 hover:border-yellow-400/40 hover:shadow-lg transform hover:scale-105"
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-2">
-                        <motion.div 
-                          className="text-yellow-400"
-                          initial={{ rotate: 0 }}
-                          animate={{ rotate: 360 }}
-                          transition={{ delay: 0.5 + (index * 0.1), duration: 0.6 }}
-                        >
-                          {discount.icon}
-                        </motion.div>
-                        <span className="font-bold text-yellow-400">{discount.title}</span>
-                      </div>
-                      <motion.div 
-                        className="text-xs bg-yellow-400 text-maroon-900 px-2 py-1 rounded-full font-bold"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.6 + (index * 0.1), type: "spring", stiffness: 300 }}
+                    transition={{
+                      duration: 10,
+                      ease: "linear",
+                      repeat: Infinity,
+                    }}
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #FFD700 1px, transparent 1px)',
+                      backgroundSize: '20px 20px',
+                    }}
+                  />
+                  
+                  <div className="relative z-10">
+                    <motion.h3 
+                      className="text-xl font-bold text-yellow-400 flex items-center justify-center space-x-2"
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <span>🎯</span>
+                      <span>EXCLUSIVE DEALS</span>
+                      <span>🎯</span>
+                    </motion.h3>
+                    <motion.p 
+                      className="text-sm text-yellow-300 mt-1"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      Limited time offers - Act fast!
+                    </motion.p>
+                  </div>
+                </motion.div>
+                
+                {/* Offers List with Advanced Animations */}
+                <div className="p-4 space-y-3 max-h-80 overflow-y-auto">
+                  {discounts.map((discount, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 50, rotateX: -90 }}
+                      animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                      transition={{ 
+                        delay: 0.4 + (index * 0.1),
+                        duration: 0.6,
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15
+                      }}
+                      className="relative group cursor-pointer"
+                      onMouseEnter={() => setHoveredOffer(index)}
+                      onMouseLeave={() => setHoveredOffer(null)}
+                      style={{ perspective: '1000px' }}
+                    >
+                      <motion.div
+                        className={`relative rounded-2xl p-4 border-2 transition-all duration-300 overflow-hidden ${
+                          hoveredOffer === index 
+                            ? 'border-maroon-400 shadow-xl' 
+                            : 'border-gray-200 shadow-md'
+                        } ${discount.bgColor}`}
+                        whileHover={{ 
+                          scale: 1.02,
+                          rotateY: 5,
+                          z: 50
+                        }}
+                        transition={{ duration: 0.3 }}
                       >
-                        HOT
-                      </motion.div>
-                    </div>
-                    <p className="text-sm text-gray-200 mb-2">{discount.description}</p>
-                    <div className="flex items-center justify-between">
-                      <p className="text-xs text-yellow-300 font-mono bg-maroon-900/50 px-2 py-1 rounded">
-                        {discount.code}
-                      </p>
-                      <button 
-                        onClick={() => navigator.clipboard.writeText(discount.code)}
-                        className="text-xs bg-yellow-400 text-maroon-900 px-2 py-1 rounded font-bold hover:bg-yellow-300 transition-colors"
-                      >
-                        COPY
-                      </button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                        {/* Animated Background Gradient */}
+                        <motion.div
+                          className={`absolute inset-0 bg-gradient-to-r ${discount.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                          animate={{
+                            x: hoveredOffer === index ? ['-100%', '100%'] : '100%',
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            repeat: hoveredOffer === index ? Infinity : 0,
+                          }}
+                        />
 
-              {/* Floating Close Hint */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.3 }}
-                className="p-3 text-center border-t border-yellow-400/20"
-              >
-                <p className="text-xs text-yellow-300/70">Click button again to close</p>
-              </motion.div>
+                        {/* Content */}
+                        <div className="relative z-10">
+                          {/* Header Row */}
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center space-x-3">
+                              <motion.div 
+                                className={`text-white p-2 rounded-lg bg-gradient-to-r ${discount.color}`}
+                                animate={{ 
+                                  rotate: hoveredOffer === index ? 360 : 0,
+                                  scale: hoveredOffer === index ? 1.1 : 1
+                                }}
+                                transition={{ duration: 0.6 }}
+                              >
+                                {discount.icon}
+                              </motion.div>
+                              <div>
+                                <h4 className="font-bold text-gray-800 text-sm">{discount.title}</h4>
+                                <p className={`text-lg font-black bg-gradient-to-r ${discount.color} bg-clip-text text-transparent`}>
+                                  {discount.subtitle}
+                                </p>
+                              </div>
+                            </div>
+                            
+                            <motion.div 
+                              className={`text-xs font-bold px-2 py-1 rounded-full text-white bg-gradient-to-r ${discount.color}`}
+                              animate={{ 
+                                scale: hoveredOffer === index ? [1, 1.1, 1] : 1,
+                              }}
+                              transition={{ duration: 0.5, repeat: hoveredOffer === index ? Infinity : 0 }}
+                            >
+                              {discount.badge}
+                            </motion.div>
+                          </div>
+
+                          {/* Description */}
+                          <p className="text-gray-600 text-sm mb-3 font-medium">{discount.description}</p>
+                          
+                          {/* Time Left */}
+                          <motion.p 
+                            className="text-red-500 text-xs font-bold mb-3 flex items-center space-x-1"
+                            animate={{ opacity: [1, 0.5, 1] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                          >
+                            <Clock className="w-3 h-3" />
+                            <span>{discount.timeLeft}</span>
+                          </motion.p>
+
+                          {/* Action Row */}
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-2">
+                              <span className="text-xs text-gray-500 font-mono">Code:</span>
+                              <code className={`text-xs font-bold px-2 py-1 rounded bg-gradient-to-r ${discount.color} text-white`}>
+                                {discount.code}
+                              </code>
+                            </div>
+                            
+                            <motion.button 
+                              onClick={() => copyCode(discount.code)}
+                              className={`text-xs font-bold px-3 py-1 rounded-lg text-white bg-gradient-to-r ${discount.color} hover:shadow-lg transition-all duration-300`}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              {copiedCode === discount.code ? '✓ COPIED!' : 'COPY'}
+                            </motion.button>
+                          </div>
+                        </div>
+
+                        {/* Hover Glow Effect */}
+                        <motion.div
+                          className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${discount.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
+                          animate={{
+                            scale: hoveredOffer === index ? [1, 1.05, 1] : 1,
+                          }}
+                          transition={{ duration: 1, repeat: hoveredOffer === index ? Infinity : 0 }}
+                        />
+                      </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Footer with Call-to-Action */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.2, duration: 0.5 }}
+                  className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 border-t border-gray-200 text-center"
+                >
+                  <motion.p 
+                    className="text-xs text-gray-600 mb-2"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    💡 Tap any offer to copy the code instantly
+                  </motion.p>
+                  <motion.button
+                    onClick={toggleOffers}
+                    className="text-xs text-maroon-600 hover:text-maroon-800 font-medium"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    Close offers panel
+                  </motion.button>
+                </motion.div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
