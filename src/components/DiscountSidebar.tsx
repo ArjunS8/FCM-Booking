@@ -89,13 +89,20 @@ const DiscountSidebar = () => {
   };
 
   return (
-    <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
+    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
       <div className="relative">
-        {/* Floating Trigger Button with Advanced Animations */}
-        <motion.div
-          className="relative"
+        {/* Compact Trigger Button - Always Visible */}
+        <motion.button
+          onClick={toggleOffers}
+          className="relative bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white p-3 rounded-l-2xl hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 cursor-pointer shadow-2xl border-2 border-yellow-400/30 flex items-center space-x-2 overflow-hidden"
+          whileHover={{ 
+            scale: 1.05,
+            x: -5,
+            boxShadow: "0 20px 40px rgba(255, 215, 0, 0.3)"
+          }}
+          whileTap={{ scale: 0.95 }}
           animate={{
-            x: isOpen ? -320 : 0,
+            x: 0,
           }}
           transition={{
             type: "spring",
@@ -104,119 +111,82 @@ const DiscountSidebar = () => {
             duration: 0.6
           }}
         >
-          {/* Pulsing Ring Animation */}
+          {/* Animated Background Gradient */}
           <motion.div
-            className="absolute inset-0 rounded-l-2xl"
+            className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"
             animate={{
-              scale: pulseAnimation ? [1, 1.1, 1] : 1,
-              opacity: pulseAnimation ? [0.5, 0.8, 0.5] : 0.5,
+              x: ['-100%', '100%'],
             }}
             transition={{
               duration: 2,
               ease: "easeInOut",
               repeat: Infinity,
             }}
-            style={{
-              background: 'linear-gradient(135deg, #FFD700, #FFA500)',
-              filter: 'blur(8px)',
-            }}
           />
 
-          {/* Main Trigger Button */}
-          <motion.button
-            onClick={toggleOffers}
-            className="relative bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white p-4 rounded-l-2xl hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 cursor-pointer shadow-2xl border-2 border-yellow-400/30 flex items-center space-x-3 overflow-hidden"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 20px 40px rgba(255, 215, 0, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {/* Animated Background Gradient */}
+          {/* Content */}
+          <div className="relative z-10 flex items-center space-x-2">
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"
-              animate={{
-                x: isOpen ? ['-100%', '100%'] : ['100%', '-100%'],
+              animate={{ 
+                scale: pulseAnimation ? [1, 1.1, 1] : 1,
               }}
-              transition={{
-                duration: 2,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-            />
-
-            {/* Content */}
-            <div className="relative z-10 flex items-center space-x-3">
-              <motion.div
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <Gift className="w-5 h-5 text-yellow-400" />
+            </motion.div>
+            
+            <div className="text-left">
+              <motion.div 
+                className="text-yellow-400 font-bold text-xs whitespace-nowrap"
+                animate={{ 
+                  scale: pulseAnimation ? [1, 1.05, 1] : 1,
+                }}
+                transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <Gift className="w-6 h-6 text-yellow-400" />
-              </motion.div>
-              
-              <div className="text-left">
-                <motion.div 
-                  className="text-yellow-400 font-bold text-sm whitespace-nowrap"
-                  animate={{ 
-                    scale: pulseAnimation ? [1, 1.05, 1] : 1,
-                  }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  🎯 Special Offers
-                </motion.div>
-                <div className="text-yellow-300 text-xs">
-                  {isOpen ? 'Close deals' : 'Tap for deals!'}
-                </div>
-              </div>
-
-              <motion.div
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {isOpen ? (
-                  <ChevronDown className="w-5 h-5 text-yellow-400" />
-                ) : (
-                  <ChevronUp className="w-5 h-5 text-yellow-400" />
-                )}
+                🎯 Offers
               </motion.div>
             </div>
 
-            {/* Notification Badge */}
             <motion.div
-              className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
-              animate={{
-                scale: pulseAnimation ? [1, 1.2, 1] : 1,
-              }}
-              transition={{ duration: 1, repeat: Infinity }}
+              animate={{ rotate: isOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
             >
-              5
+              <ChevronUp className="w-4 h-4 text-yellow-400" />
             </motion.div>
-          </motion.button>
-        </motion.div>
+          </div>
 
-        {/* Innovative Offers Panel */}
+          {/* Notification Badge */}
+          <motion.div
+            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+            animate={{
+              scale: pulseAnimation ? [1, 1.2, 1] : 1,
+            }}
+            transition={{ duration: 1, repeat: Infinity }}
+          >
+            5
+          </motion.div>
+        </motion.button>
+
+        {/* Offers Panel - Only Shows When Open */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ 
                 opacity: 0, 
                 scale: 0.3,
-                x: 150,
-                y: 100,
+                x: 100,
                 rotateY: -90
               }}
               animate={{ 
                 opacity: 1, 
                 scale: 1,
-                x: 0,
-                y: 0,
+                x: -320,
                 rotateY: 0
               }}
               exit={{ 
                 opacity: 0, 
                 scale: 0.3,
-                x: 150,
-                y: 100,
+                x: 100,
                 rotateY: 90
               }}
               transition={{ 
@@ -228,7 +198,7 @@ const DiscountSidebar = () => {
                 scale: { duration: 0.6 },
                 rotateY: { duration: 0.7 }
               }}
-              className="absolute bottom-0 right-20 w-80 max-h-[500px] overflow-hidden"
+              className="absolute top-0 right-0 w-80 max-h-[500px] overflow-hidden"
               style={{ perspective: '1000px' }}
             >
               {/* Main Panel Container */}
