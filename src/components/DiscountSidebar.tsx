@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Percent, Clock, Star, ChevronUp, ChevronDown, Gift, Zap, Crown, Siren as Fire } from 'lucide-react';
+import { Percent, Clock, Star, ChevronLeft, ChevronRight, Gift, Zap, Crown, Siren as Fire } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DiscountSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredOffer, setHoveredOffer] = useState<number | null>(null);
-  const [pulseAnimation, setPulseAnimation] = useState(true);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const discounts = [
@@ -66,14 +65,6 @@ const DiscountSidebar = () => {
     }
   ];
 
-  // Pulse animation control
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPulseAnimation(prev => !prev);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   const toggleOffers = () => {
     setIsOpen(!isOpen);
   };
@@ -89,317 +80,247 @@ const DiscountSidebar = () => {
   };
 
   return (
-    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
-      <div className="relative">
-        {/* Compact Trigger Button - Always Visible */}
-        <motion.button
-          onClick={toggleOffers}
-          className="relative bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white p-3 rounded-l-2xl hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 cursor-pointer shadow-2xl border-2 border-yellow-400/30 flex items-center space-x-2 overflow-hidden"
-          whileHover={{ 
-            scale: 1.05,
-            x: -5,
-            boxShadow: "0 20px 40px rgba(255, 215, 0, 0.3)"
-          }}
-          whileTap={{ scale: 0.95 }}
+    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-50">
+      {/* Minimal Arrow Button - Always Visible */}
+      <motion.button
+        onClick={toggleOffers}
+        className="relative bg-gradient-to-b from-maroon-600 to-maroon-800 text-white rounded-l-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-yellow-400/50"
+        whileHover={{ 
+          scale: 1.1,
+          x: -2,
+          boxShadow: "0 10px 25px rgba(128, 0, 32, 0.4)"
+        }}
+        whileTap={{ scale: 0.95 }}
+        style={{
+          width: '40px',
+          height: '80px',
+          borderTopRightRadius: '0',
+          borderBottomRightRadius: '0'
+        }}
+      >
+        {/* Animated Background Shine */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-b from-yellow-400/30 to-transparent rounded-l-full"
           animate={{
-            x: 0,
+            opacity: [0.3, 0.7, 0.3],
           }}
           transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 25,
-            duration: 0.6
+            duration: 2,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        />
+
+        {/* Arrow Icon */}
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <motion.div
+            animate={{ 
+              x: isOpen ? 2 : [-2, 2, -2],
+              rotate: isOpen ? 180 : 0
+            }}
+            transition={{ 
+              x: { duration: isOpen ? 0.3 : 2, repeat: isOpen ? 0 : Infinity },
+              rotate: { duration: 0.3 }
+            }}
+          >
+            <ChevronLeft className="w-5 h-5 text-yellow-400" />
+          </motion.div>
+        </div>
+
+        {/* Notification Dot */}
+        <motion.div
+          className="absolute -top-1 -left-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white"
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ 
+            duration: 1.5, 
+            repeat: Infinity,
+            ease: "easeInOut"
           }}
         >
-          {/* Animated Background Gradient */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"
-            animate={{
-              x: ['-100%', '100%'],
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
-          />
+          5
+        </motion.div>
 
-          {/* Content */}
-          <div className="relative z-10 flex items-center space-x-2">
+        {/* Vertical Text */}
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-90">
+          <span className="text-xs font-bold text-yellow-400 whitespace-nowrap">OFFERS</span>
+        </div>
+      </motion.button>
+
+      {/* Floating Offers Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
             <motion.div
-              animate={{ 
-                scale: pulseAnimation ? [1, 1.1, 1] : 1,
-              }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <Gift className="w-5 h-5 text-yellow-400" />
-            </motion.div>
-            
-            <div className="text-left">
-              <motion.div 
-                className="text-yellow-400 font-bold text-xs whitespace-nowrap"
-                animate={{ 
-                  scale: pulseAnimation ? [1, 1.05, 1] : 1,
-                }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                🎯 Offers
-              </motion.div>
-            </div>
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm"
+              onClick={toggleOffers}
+              style={{ zIndex: -1 }}
+            />
 
-            <motion.div
-              animate={{ rotate: isOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ChevronUp className="w-4 h-4 text-yellow-400" />
-            </motion.div>
-          </div>
-
-          {/* Notification Badge */}
-          <motion.div
-            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
-            animate={{
-              scale: pulseAnimation ? [1, 1.2, 1] : 1,
-            }}
-            transition={{ duration: 1, repeat: Infinity }}
-          >
-            5
-          </motion.div>
-        </motion.button>
-
-        {/* Offers Panel - Only Shows When Open */}
-        <AnimatePresence>
-          {isOpen && (
+            {/* Offers Panel */}
             <motion.div
               initial={{ 
                 opacity: 0, 
-                scale: 0.3,
+                scale: 0.8,
                 x: 100,
-                rotateY: -90
+                y: 0
               }}
               animate={{ 
                 opacity: 1, 
                 scale: 1,
-                x: -320,
-                rotateY: 0
+                x: -350,
+                y: -200
               }}
               exit={{ 
                 opacity: 0, 
-                scale: 0.3,
+                scale: 0.8,
                 x: 100,
-                rotateY: 90
+                y: 0
               }}
               transition={{ 
                 type: "spring", 
-                stiffness: 200, 
-                damping: 20,
-                duration: 0.8,
-                opacity: { duration: 0.5 },
-                scale: { duration: 0.6 },
-                rotateY: { duration: 0.7 }
+                stiffness: 300, 
+                damping: 25,
+                duration: 0.6
               }}
-              className="absolute top-0 right-0 w-80 max-h-[500px] overflow-hidden"
-              style={{ perspective: '1000px' }}
+              className="absolute top-0 right-0 w-80 max-h-[500px] overflow-hidden shadow-2xl"
             >
               {/* Main Panel Container */}
-              <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
-                {/* Animated Header */}
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                {/* Header */}
                 <motion.div
-                  initial={{ opacity: 0, y: -30 }}
+                  initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  className="relative p-6 bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white text-center overflow-hidden"
+                  transition={{ delay: 0.2, duration: 0.4 }}
+                  className="relative p-4 bg-gradient-to-r from-maroon-900 to-maroon-700 text-white text-center overflow-hidden"
                 >
-                  {/* Animated Background Pattern */}
-                  <motion.div
-                    className="absolute inset-0 opacity-20"
-                    animate={{
-                      backgroundPosition: ['0% 0%', '100% 100%'],
-                    }}
-                    transition={{
-                      duration: 10,
-                      ease: "linear",
-                      repeat: Infinity,
-                    }}
-                    style={{
-                      backgroundImage: 'radial-gradient(circle, #FFD700 1px, transparent 1px)',
-                      backgroundSize: '20px 20px',
-                    }}
-                  />
-                  
-                  <div className="relative z-10">
-                    <motion.h3 
-                      className="text-xl font-bold text-yellow-400 flex items-center justify-center space-x-2"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <span>🎯</span>
-                      <span>EXCLUSIVE DEALS</span>
-                      <span>🎯</span>
-                    </motion.h3>
-                    <motion.p 
-                      className="text-sm text-yellow-300 mt-1"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5 }}
-                    >
-                      Limited time offers - Act fast!
-                    </motion.p>
-                  </div>
+                  {/* Close Button */}
+                  <button
+                    onClick={toggleOffers}
+                    className="absolute top-2 right-2 w-6 h-6 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+
+                  <motion.h3 
+                    className="text-lg font-bold text-yellow-400 flex items-center justify-center space-x-2"
+                    animate={{ scale: [1, 1.02, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <span>🎯</span>
+                    <span>SPECIAL OFFERS</span>
+                    <span>🎯</span>
+                  </motion.h3>
+                  <p className="text-xs text-yellow-300 mt-1">
+                    Limited time deals - Grab them now!
+                  </p>
                 </motion.div>
                 
-                {/* Offers List with Advanced Animations */}
-                <div className="p-4 space-y-3 max-h-80 overflow-y-auto">
+                {/* Offers List */}
+                <div className="p-3 space-y-2 max-h-80 overflow-y-auto">
                   {discounts.map((discount, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 50, rotateX: -90 }}
-                      animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{ 
-                        delay: 0.4 + (index * 0.1),
-                        duration: 0.6,
-                        type: "spring",
-                        stiffness: 200,
-                        damping: 15
+                        delay: 0.3 + (index * 0.1),
+                        duration: 0.4
                       }}
                       className="relative group cursor-pointer"
                       onMouseEnter={() => setHoveredOffer(index)}
                       onMouseLeave={() => setHoveredOffer(null)}
-                      style={{ perspective: '1000px' }}
                     >
                       <motion.div
-                        className={`relative rounded-2xl p-4 border-2 transition-all duration-300 overflow-hidden ${
+                        className={`relative rounded-xl p-3 border transition-all duration-300 overflow-hidden ${
                           hoveredOffer === index 
-                            ? 'border-maroon-400 shadow-xl' 
-                            : 'border-gray-200 shadow-md'
+                            ? 'border-maroon-400 shadow-lg' 
+                            : 'border-gray-200 shadow-sm'
                         } ${discount.bgColor}`}
-                        whileHover={{ 
-                          scale: 1.02,
-                          rotateY: 5,
-                          z: 50
-                        }}
-                        transition={{ duration: 0.3 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.2 }}
                       >
-                        {/* Animated Background Gradient */}
-                        <motion.div
-                          className={`absolute inset-0 bg-gradient-to-r ${discount.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                          animate={{
-                            x: hoveredOffer === index ? ['-100%', '100%'] : '100%',
-                          }}
-                          transition={{
-                            duration: 1.5,
-                            ease: "easeInOut",
-                            repeat: hoveredOffer === index ? Infinity : 0,
-                          }}
-                        />
-
                         {/* Content */}
                         <div className="relative z-10">
                           {/* Header Row */}
-                          <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center space-x-3">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center space-x-2">
                               <motion.div 
-                                className={`text-white p-2 rounded-lg bg-gradient-to-r ${discount.color}`}
+                                className={`text-white p-1.5 rounded-lg bg-gradient-to-r ${discount.color}`}
                                 animate={{ 
-                                  rotate: hoveredOffer === index ? 360 : 0,
-                                  scale: hoveredOffer === index ? 1.1 : 1
+                                  rotate: hoveredOffer === index ? 360 : 0
                                 }}
-                                transition={{ duration: 0.6 }}
+                                transition={{ duration: 0.5 }}
                               >
                                 {discount.icon}
                               </motion.div>
                               <div>
-                                <h4 className="font-bold text-gray-800 text-sm">{discount.title}</h4>
-                                <p className={`text-lg font-black bg-gradient-to-r ${discount.color} bg-clip-text text-transparent`}>
+                                <h4 className="font-bold text-gray-800 text-xs">{discount.title}</h4>
+                                <p className={`text-sm font-black bg-gradient-to-r ${discount.color} bg-clip-text text-transparent`}>
                                   {discount.subtitle}
                                 </p>
                               </div>
                             </div>
                             
-                            <motion.div 
-                              className={`text-xs font-bold px-2 py-1 rounded-full text-white bg-gradient-to-r ${discount.color}`}
-                              animate={{ 
-                                scale: hoveredOffer === index ? [1, 1.1, 1] : 1,
-                              }}
-                              transition={{ duration: 0.5, repeat: hoveredOffer === index ? Infinity : 0 }}
-                            >
+                            <div className={`text-xs font-bold px-2 py-0.5 rounded-full text-white bg-gradient-to-r ${discount.color}`}>
                               {discount.badge}
-                            </motion.div>
+                            </div>
                           </div>
 
                           {/* Description */}
-                          <p className="text-gray-600 text-sm mb-3 font-medium">{discount.description}</p>
+                          <p className="text-gray-600 text-xs mb-2">{discount.description}</p>
                           
                           {/* Time Left */}
-                          <motion.p 
-                            className="text-red-500 text-xs font-bold mb-3 flex items-center space-x-1"
-                            animate={{ opacity: [1, 0.5, 1] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                          >
+                          <p className="text-red-500 text-xs font-bold mb-2 flex items-center space-x-1">
                             <Clock className="w-3 h-3" />
                             <span>{discount.timeLeft}</span>
-                          </motion.p>
+                          </p>
 
                           {/* Action Row */}
                           <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-2">
-                              <span className="text-xs text-gray-500 font-mono">Code:</span>
-                              <code className={`text-xs font-bold px-2 py-1 rounded bg-gradient-to-r ${discount.color} text-white`}>
+                            <div className="flex items-center space-x-1">
+                              <span className="text-xs text-gray-500">Code:</span>
+                              <code className={`text-xs font-bold px-1.5 py-0.5 rounded bg-gradient-to-r ${discount.color} text-white`}>
                                 {discount.code}
                               </code>
                             </div>
                             
                             <motion.button 
                               onClick={() => copyCode(discount.code)}
-                              className={`text-xs font-bold px-3 py-1 rounded-lg text-white bg-gradient-to-r ${discount.color} hover:shadow-lg transition-all duration-300`}
+                              className={`text-xs font-bold px-2 py-1 rounded-lg text-white bg-gradient-to-r ${discount.color} hover:shadow-md transition-all duration-200`}
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
                             >
-                              {copiedCode === discount.code ? '✓ COPIED!' : 'COPY'}
+                              {copiedCode === discount.code ? '✓' : 'COPY'}
                             </motion.button>
                           </div>
                         </div>
-
-                        {/* Hover Glow Effect */}
-                        <motion.div
-                          className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${discount.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
-                          animate={{
-                            scale: hoveredOffer === index ? [1, 1.05, 1] : 1,
-                          }}
-                          transition={{ duration: 1, repeat: hoveredOffer === index ? Infinity : 0 }}
-                        />
                       </motion.div>
                     </motion.div>
                   ))}
                 </div>
 
-                {/* Footer with Call-to-Action */}
+                {/* Footer */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
-                  className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 border-t border-gray-200 text-center"
+                  transition={{ delay: 0.8, duration: 0.4 }}
+                  className="p-3 bg-gray-50 border-t border-gray-200 text-center"
                 >
-                  <motion.p 
-                    className="text-xs text-gray-600 mb-2"
-                    animate={{ opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    💡 Tap any offer to copy the code instantly
-                  </motion.p>
-                  <motion.button
-                    onClick={toggleOffers}
-                    className="text-xs text-maroon-600 hover:text-maroon-800 font-medium"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    Close offers panel
-                  </motion.button>
+                  <p className="text-xs text-gray-600">
+                    💡 Click any offer to copy the code
+                  </p>
                 </motion.div>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
