@@ -188,7 +188,7 @@ const DiscountSidebar = () => {
                 damping: 25,
                 duration: 0.6
               }}
-              className="absolute top-0 right-0 w-80 max-h-[500px] overflow-hidden shadow-2xl"
+              className="absolute top-0 right-0 w-64 max-h-[500px] overflow-hidden shadow-2xl"
             >
               {/* Main Panel Container */}
               <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
