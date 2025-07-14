@@ -9,7 +9,7 @@ const DiscountSidebar = () => {
 
   const discounts = [
     {
-      icon: <Fire className="w-5 h-5" />,
+      icon: <Fire className="w-4 h-4" />,
       title: "🔥 FLASH SALE",
       subtitle: "40% OFF",
       description: "Weekend Bookings",
@@ -17,51 +17,51 @@ const DiscountSidebar = () => {
       color: "from-red-500 to-orange-500",
       bgColor: "bg-gradient-to-r from-red-50 to-orange-50",
       badge: "LIMITED",
-      timeLeft: "2 hours left!"
+      timeLeft: "2h left"
     },
     {
-      icon: <Crown className="w-5 h-5" />,
+      icon: <Crown className="w-4 h-4" />,
       title: "👑 VIP DEAL",
-      subtitle: "Buy 2 Get 1 FREE",
-      description: "Premium Morning Slots",
+      subtitle: "3 for 2",
+      description: "Premium Slots",
       code: "VIP3FOR2",
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-gradient-to-r from-purple-50 to-pink-50",
       badge: "EXCLUSIVE",
-      timeLeft: "Today only!"
+      timeLeft: "Today"
     },
     {
-      icon: <Star className="w-5 h-5" />,
-      title: "⭐ NEWCOMER",
+      icon: <Star className="w-4 h-4" />,
+      title: "⭐ NEW USER",
       subtitle: "50% OFF",
-      description: "First Time Users",
+      description: "First Booking",
       code: "WELCOME50",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-gradient-to-r from-blue-50 to-cyan-50",
-      badge: "NEW USER",
-      timeLeft: "Valid for 7 days"
+      badge: "NEW",
+      timeLeft: "7 days"
     },
     {
-      icon: <Zap className="w-5 h-5" />,
-      title: "⚡ POWER HOUR",
+      icon: <Zap className="w-4 h-4" />,
+      title: "⚡ GROUP",
       subtitle: "30% OFF",
-      description: "Group Bookings (5+)",
+      description: "5+ bookings",
       code: "POWER30",
       color: "from-yellow-500 to-amber-500",
       bgColor: "bg-gradient-to-r from-yellow-50 to-amber-50",
       badge: "GROUP",
-      timeLeft: "This week only"
+      timeLeft: "This week"
     },
     {
-      icon: <Gift className="w-5 h-5" />,
+      icon: <Gift className="w-4 h-4" />,
       title: "🎁 LOYALTY",
       subtitle: "25% OFF",
-      description: "Monthly Pass Holders",
+      description: "Monthly Pass",
       code: "LOYAL25",
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-gradient-to-r from-green-50 to-emerald-50",
       badge: "MEMBERS",
-      timeLeft: "Ongoing benefit"
+      timeLeft: "Ongoing"
     }
   ];
 
@@ -188,7 +188,7 @@ const DiscountSidebar = () => {
                 damping: 25,
                 duration: 0.6
               }}
-              className="absolute top-0 right-0 w-64 max-h-[500px] overflow-hidden shadow-2xl"
+              className="absolute top-0 right-0 w-64 max-h-[400px] overflow-hidden shadow-2xl"
             >
               {/* Main Panel Container */}
               <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
@@ -197,32 +197,32 @@ const DiscountSidebar = () => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.4 }}
-                  className="relative p-4 bg-gradient-to-r from-maroon-900 to-maroon-700 text-white text-center overflow-hidden"
+                  className="relative p-3 bg-gradient-to-r from-maroon-900 to-maroon-700 text-white text-center overflow-hidden"
                 >
                   {/* Close Button */}
                   <button
                     onClick={toggleOffers}
-                    className="absolute top-2 right-2 w-6 h-6 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+                    className="absolute top-1 right-1 w-5 h-5 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
                   >
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-3 h-3" />
                   </button>
 
                   <motion.h3 
-                    className="text-lg font-bold text-yellow-400 flex items-center justify-center space-x-2"
+                    className="text-sm font-bold text-yellow-400 flex items-center justify-center space-x-1"
                     animate={{ scale: [1, 1.02, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     <span>🎯</span>
-                    <span>SPECIAL OFFERS</span>
+                    <span>OFFERS</span>
                     <span>🎯</span>
                   </motion.h3>
-                  <p className="text-xs text-yellow-300 mt-1">
-                    Limited time deals - Grab them now!
+                  <p className="text-[0.65rem] text-yellow-300 mt-0.5">
+                    Limited time deals
                   </p>
                 </motion.div>
                 
                 {/* Offers List */}
-                <div className="p-3 space-y-2 max-h-80 overflow-y-auto">
+                <div className="p-2 space-y-2 max-h-[300px] overflow-y-auto">
                   {discounts.map((discount, index) => (
                     <motion.div
                       key={index}
@@ -237,9 +237,9 @@ const DiscountSidebar = () => {
                       onMouseLeave={() => setHoveredOffer(null)}
                     >
                       <motion.div
-                        className={`relative rounded-xl p-3 border transition-all duration-300 overflow-hidden ${
+                        className={`relative rounded-lg p-2 border transition-all duration-300 overflow-hidden ${
                           hoveredOffer === index 
-                            ? 'border-maroon-400 shadow-lg' 
+                            ? 'border-maroon-400 shadow-md' 
                             : 'border-gray-200 shadow-sm'
                         } ${discount.bgColor}`}
                         whileHover={{ scale: 1.02 }}
@@ -248,10 +248,10 @@ const DiscountSidebar = () => {
                         {/* Content */}
                         <div className="relative z-10">
                           {/* Header Row */}
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center space-x-2">
+                          <div className="flex items-center justify-between mb-1">
+                            <div className="flex items-center space-x-1">
                               <motion.div 
-                                className={`text-white p-1.5 rounded-lg bg-gradient-to-r ${discount.color}`}
+                                className={`text-white p-1 rounded-md bg-gradient-to-r ${discount.color}`}
                                 animate={{ 
                                   rotate: hoveredOffer === index ? 360 : 0
                                 }}
@@ -261,38 +261,38 @@ const DiscountSidebar = () => {
                               </motion.div>
                               <div>
                                 <h4 className="font-bold text-gray-800 text-xs">{discount.title}</h4>
-                                <p className={`text-sm font-black bg-gradient-to-r ${discount.color} bg-clip-text text-transparent`}>
+                                <p className={`text-xs font-black bg-gradient-to-r ${discount.color} bg-clip-text text-transparent`}>
                                   {discount.subtitle}
                                 </p>
                               </div>
                             </div>
                             
-                            <div className={`text-xs font-bold px-2 py-0.5 rounded-full text-white bg-gradient-to-r ${discount.color}`}>
+                            <div className={`text-[0.6rem] font-bold px-1 py-0.5 rounded-full text-white bg-gradient-to-r ${discount.color}`}>
                               {discount.badge}
                             </div>
                           </div>
 
                           {/* Description */}
-                          <p className="text-gray-600 text-xs mb-2">{discount.description}</p>
+                          <p className="text-gray-600 text-[0.65rem] mb-1">{discount.description}</p>
                           
                           {/* Time Left */}
-                          <p className="text-red-500 text-xs font-bold mb-2 flex items-center space-x-1">
-                            <Clock className="w-3 h-3" />
+                          <p className="text-red-500 text-[0.6rem] font-bold mb-1 flex items-center space-x-1">
+                            <Clock className="w-2.5 h-2.5" />
                             <span>{discount.timeLeft}</span>
                           </p>
 
                           {/* Action Row */}
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-1">
-                              <span className="text-xs text-gray-500">Code:</span>
-                              <code className={`text-xs font-bold px-1.5 py-0.5 rounded bg-gradient-to-r ${discount.color} text-white`}>
+                              <span className="text-[0.6rem] text-gray-500">Code:</span>
+                              <code className={`text-[0.6rem] font-bold px-1 py-0.5 rounded bg-gradient-to-r ${discount.color} text-white`}>
                                 {discount.code}
                               </code>
                             </div>
                             
                             <motion.button 
                               onClick={() => copyCode(discount.code)}
-                              className={`text-xs font-bold px-2 py-1 rounded-lg text-white bg-gradient-to-r ${discount.color} hover:shadow-md transition-all duration-200`}
+                              className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-md text-white bg-gradient-to-r ${discount.color} hover:shadow-md transition-all duration-200`}
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
                             >
@@ -310,10 +310,10 @@ const DiscountSidebar = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8, duration: 0.4 }}
-                  className="p-3 bg-gray-50 border-t border-gray-200 text-center"
+                  className="p-2 bg-gray-50 border-t border-gray-200 text-center"
                 >
-                  <p className="text-xs text-gray-600">
-                    💡 Click any offer to copy the code
+                  <p className="text-[0.6rem] text-gray-600">
+                    💡 Click to copy code
                   </p>
                 </motion.div>
               </div>
