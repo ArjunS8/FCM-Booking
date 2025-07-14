@@ -5,10 +5,10 @@ const WhatsAppButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = '+919876543210';
+    const phoneNumber = '+919962220400';
     const message = 'Hello! I would like to know more about FC Marina turf bookings.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, 'https://api.whatsapp.com/send?phone=919962220400');
   };
 
   const toggleExpanded = () => {
@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="whatsapp-float">
+    <div className="whatsapp-float fixed z-50" style={{ bottom: '5rem', right: '2rem' }}>
       {/* Expanded Message Box */}
       {isExpanded && (
         <div className="absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl p-6 w-80 mb-2 animate-slide-up border-2 border-green-100">
@@ -70,11 +70,11 @@ const WhatsAppButton = () => {
             </button>
             
             <button
-              onClick={() => window.open('tel:+919876543210')}
+              onClick={() => window.open('tel:+919962220400')}
               className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <Phone className="w-5 h-5" />
-              <span>Call Now: +91 98765 43210</span>
+              <span>Call Now: +91 9962220400</span>
             </button>
           </div>
           

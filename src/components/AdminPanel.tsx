@@ -77,7 +77,7 @@ const AdminPanel = () => {
 
   const loadLogo = async () => {
     // Load current logo URL
-    setLogoUrl('/vite.svg');
+    setLogoUrl('Screenshot 2025-07-14 205939.png');
   };
 
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>, category: 'gallery' | 'venue' | 'logo') => {
@@ -184,7 +184,7 @@ const AdminPanel = () => {
               <div className="flex items-center space-x-6">
                 <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
                   {logoUrl ? (
-                    <img src={logoUrl} alt="Logo" className="w-full h-full object-contain" />
+                    <img src={"Screenshot 2025-07-14 205939.png"} alt="Logo" className="w-full h-full object-contain" />
                   ) : (
                     <Image className="w-8 h-8 text-gray-400" />
                   )}
@@ -381,7 +381,7 @@ const AdminPanel = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Website Title</label>
                 <input
                   type="text"
-                  defaultValue="FC Marina Bookings Chennai"
+                  defaultValue=" Chennai"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-maroon-500"
                 />
               </div>
@@ -390,7 +390,7 @@ const AdminPanel = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Contact Email</label>
                 <input
                   type="text"
-                  defaultValue="info@fcmarina.com"
+                  defaultValue="contact@fcmbookings.com"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-maroon-500"
                 />
               </div>

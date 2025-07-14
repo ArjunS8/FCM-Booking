@@ -25,7 +25,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.instagram.com/fcmarina_tn/"
-                className="text-gray-300 hover:text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#C13584] hover:to-[#E1306C] transition-all duration-300"
+                className="text-gray-300 hover:text-[#F58529] transition-all duration-300"
                 title="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -72,19 +72,9 @@ const Footer = () => {
                   Turf Booking
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Tournament Organization
-                </a>
-              </li>
-              <li>
+             <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
                   Coaching Programs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">
-                  Equipment Rental
                 </a>
               </li>
             </ul>
@@ -100,13 +90,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gray-300" />
-                <span className="text-gray-300">info@fcmarina.com</span>
+                <span className="text-gray-300">Contact@fcmbookings.com</span>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-300 mt-1" />
                 <span className="text-gray-300">
-                  123 Marina Beach Road,<br />
-                  Chennai, Tamil Nadu 600001
+                  113/77, Chettiyar Agaram Rd, Numbal,
+                  Vanagaram, Chennai-600077.
                 </span>
               </li>
             </ul>
@@ -151,10 +141,11 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 mb-4 md:mb-0 text-sm sm:text-base text-center md:text-left">
             © 2024 FC Marina. All rights reserved.
-          </p> 
-            <a href="https://socialcosmos.in/" className="text-gray-300 hover:text-[#00ff00] transition-colors duration-300 text-sm sm:text-base">
-          Powered by <b>Social Cosmos</b>
-            </a>
+          </p>
+          <span className="text-gray-300 text-sm sm:text-base">
+            Powered by{' '}
+            <a href="https://socialcosmos.in/" className="text-[#00ff00] hover:text-[#00ff00] transition-colors duration-300 font-bold">Social Cosmos</a>
+          </span>
            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
               Privacy Policy
@@ -163,7 +154,7 @@ const Footer = () => {
               Terms of Service
             </a>
             <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-              Cookie Policy
+              Cancellation and Refunds Policy
             </a>
           </div>
         </div>
