@@ -76,7 +76,7 @@ const Home = () => {
             className="max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 text-shadow">
-              FC Marina <span className="no-gradient-text">Turfs</span>
+              FC Marina Turfs
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8 text-shadow">
               Chennai's Premier Football Turf Booking Platform
@@ -191,7 +191,7 @@ const Home = () => {
       </section>
 
       {/* Gallery Section - Moved after Features */}
-      <section id="gallery-section" className="py-20 bg-gray-100 relative">
+      <section id="gallery-section" className="py-20 bg-maroon-800 relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -199,8 +199,8 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-2xl sm:text-4xl font-bold text-maroon-900 mb-4">Our Gallery</h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-4xl font-bold text-gray-300 mb-4">Our Gallery</h2>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               Take a look at our world-class football turf facilities across Chennai
             </p>
           </motion.div>
@@ -208,27 +208,27 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                src: "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=400",
+                src: "/venue-images/2K6A6048.JPG",
                 caption: "Premium Football Turf with Floodlights"
               },
               {
-                src: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+                src: "/venue-images/2K6A6047.JPG",
                 caption: "State-of-the-art Artificial Grass"
               },
               {
-                src: "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=400",
+                src: "/venue-images/2K6A6046.JPG",
                 caption: "Professional Standard Football Field"
               },
               {
-                src: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=400",
+                src: "/venue-images/2K6A6045.JPG",
                 caption: "Well-maintained Grass Pitch"
               },
               {
-                src: "https://images.pexels.com/photos/1657349/pexels-photo-1657349.jpeg?auto=compress&cs=tinysrgb&w=400",
+                src: "/venue-images/2K6A6044.JPG",
                 caption: "Modern Turf Facilities"
               },
               {
-                src: "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=400",
+                src: "/venue-images/2K6A6043.JPG",
                 caption: "Evening Football Sessions"
               }
             ].map((image, index) => (
@@ -260,7 +260,7 @@ const Home = () => {
               <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block bg-maroon-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon-700 transition-colors duration-300 cursor-pointer"
+              className="inline-block bg-maroon-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon-800 transition-colors duration-300 cursor-pointer"
             >
               View Full Gallery
               </motion.button>
@@ -322,9 +322,9 @@ const Home = () => {
                 <div className="w-48 sm:w-64 h-72 sm:h-96 bg-white rounded-3xl shadow-2xl mx-auto p-4">
                   <div className="w-full h-full bg-gradient-to-br from-maroon-600 to-maroon-800 rounded-2xl overflow-hidden">
                     <img
-                      src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=300&h=600&fit=crop"
+                      src="/app_screenshot.jpg"
                       alt="FC Marina Mobile App Screenshot"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>

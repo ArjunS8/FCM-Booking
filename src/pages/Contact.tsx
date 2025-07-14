@@ -32,25 +32,25 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+91 9962220400", "+91 9876543211"],
+      details: ["+91 9962220400"],
       action: "tel:+919962220400"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@fcmarina.com", "bookings@fcmarina.com"],
-      action: "mailto:info@fcmarina.com"
+      details: ["contact@fcmbookings.com",],
+      action: "mailto:contact@fcmbookings.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Head Office",
-      details: ["123 Marina Beach Road", "Chennai, Tamil Nadu 600001"],
-      action: "https://maps.google.com/?q=Marina+Beach+Chennai"
+      details: ["113/77, Chettiyar Agaram Rd, Numbal, Vanagaram, Chennai, Adayalampattu, Tamil Nadu 600077"],
+      action: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+-+Centre+of+Excellence/@13.0546361,80.1488909,851m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5261ff119b5dfd:0x2b7eac202ee7814e!8m2!3d13.0546361!4d80.1488909!16s%2Fg%2F11y6n_n6d_?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Operating Hours",
-      details: ["Mon - Sun: 6:00 AM - 11:00 PM", "Customer Support: 24/7"],
+      details: ["Mon - Sun: Open 24/7", "Customer Support: 24/7"],
       action: null
     }
   ];
@@ -60,85 +60,85 @@ const Contact = () => {
       name: "FC Marina Vanagaram",
       address: "113/77, Chettiyar Agaram Rd, Numbal, Vanagaram, Chennai-600077",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/113,+Chettiyar+Agaram+Rd,+Chettiyar+Agaram,+Porur,+Chennai,",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.16570731482196!3d13.0475815908074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sVanagaram%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000000!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+-+Centre+of+Excellence/@13.0546361,80.1488909,851m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5261ff119b5dfd:0x2b7eac202ee7814e!8m2!3d13.0546361!4d80.1488909!16s%2Fg%2F11y6n_n6d_?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+-+Centre+of+Excellence/@13.0546361,80.1488909,851m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5261ff119b5dfd:0x2b7eac202ee7814e!8m2!3d13.0546361!4d80.1488909!16s%2Fg%2F11y6n_n6d_?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Porur (Keppel)",
       address: "Keppal Software park Pvt Ltd, One Paramount, 110, Mount Poonamalle Rd, Porur, Chennai-600125",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/Keppel+Software+Park,Pvt+Ltd./@13.0322309,80.1666229,1080m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.16570731482196!3d13.0322309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sPorur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000001!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Porur+Turf/@13.0311527,80.1646972,1122m/data=!3m1!1e3!4m6!3m5!1s0x3a5261a3809205f1:0x97227fb8be73c538!8m2!3d13.0310078!4d80.1682374!16s%2Fg%2F11xmd0sryw?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+Marina+Porur+Turf/@13.0311527,80.1646972,1122m/data=!3m1!1e3!4m6!3m5!1s0x3a5261a3809205f1:0x97227fb8be73c538!8m2!3d13.0310078!4d80.1682374!16s%2Fg%2F11xmd0sryw?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Nolambur",
       address: "230 4th Main Road, Apartments, opp. VGN Flats, Nolambur, Chennai-600095",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Turf+(Nolambur)/@13.0772497,80.1627306,858m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.16570731482196!3d13.0772497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sNolambur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000002!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Turf+(Nolambur)/@13.0772497,80.1627306,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a526158a80e9739:0x44f592770ade844a!8m2!3d13.0772497!4d80.1653055!16s%2Fg%2F11rgzwbtbg?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+Marina+Turf+(Nolambur)/@13.0772497,80.1627306,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a526158a80e9739:0x44f592770ade844a!8m2!3d13.0772497!4d80.1653055!16s%2Fg%2F11rgzwbtbg?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Thalambur",
       address: "No.6/858 Thiruvalluvar Street, Natham, thalambur, Chennai-600130",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+FOOTBALL+ACADEMY/@12.8540869,80.199116,3433m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.199116!3d12.8540869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sThalambur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000003!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+FOOTBALL+ACADEMY/@12.8540869,80.199116,3433m/data=!3m1!1e3!4m10!1m2!2m1!1sNo.6%2F858+Thiruvalluvar+Street,+Natham,+thalambur,+Chennai-600130%22!3m6!1s0x3a525b766d066039:0x52a8490aa73700b5!8m2!3d12.8400089!4d80.2144489!15sCkFOby42Lzg1OCBUaGlydXZhbGx1dmFyIFN0cmVldCwgTmF0aGFtLCB0aGFsYW1idXIsIENoZW5uYWktNjAwMTMwIlo_Ij1ubyA2IDg1OCB0aGlydXZhbGx1dmFyIHN0cmVldCBuYXRoYW0gdGhhbGFtYnVyIGNoZW5uYWkgNjAwMTMwkgELc29jY2VyX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlFNWFV6ZEVoUkVBRaoBchABKgoiBm5hdGhhbSgAMh8QASIbTw_bhixSuMfKCaGFxP6Ecg9MsdvnX3nafVTPMkEQAiI9bm8gNiA4NTggdGhpcnV2YWxsdXZhciBzdHJlZXQgbmF0aGFtIHRoYWxhbWJ1ciBjaGVubmFpIDYwMDEzMOABAPoBBAgAEDQ!16s%2Fg%2F11l36ggg5s?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+MARINA+FOOTBALL+ACADEMY/@12.8540869,80.199116,3433m/data=!3m1!1e3!4m10!1m2!2m1!1sNo.6%2F858+Thiruvalluvar+Street,+Natham,+thalambur,+Chennai-600130%22!3m6!1s0x3a525b766d066039:0x52a8490aa73700b5!8m2!3d12.8400089!4d80.2144489!15sCkFOby42Lzg1OCBUaGlydXZhbGx1dmFyIFN0cmVldCwgTmF0aGFtLCB0aGFsYW1idXIsIENoZW5uYWktNjAwMTMwIlo_Ij1ubyA2IDg1OCB0aGlydXZhbGx1dmFyIHN0cmVldCBuYXRoYW0gdGhhbGFtYnVyIGNoZW5uYWkgNjAwMTMwkgELc29jY2VyX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlFNWFV6ZEVoUkVBRaoBchABKgoiBm5hdGhhbSgAMh8QASIbTw_bhixSuMfKCaGFxP6Ecg9MsdvnX3nafVTPMkEQAiI9bm8gNiA4NTggdGhpcnV2YWxsdXZhciBzdHJlZXQgbmF0aGFtIHRoYWxhbWJ1ciBjaGVubmFpIDYwMDEzMOABAPoBBAgAEDQ!16s%2Fg%2F11l36ggg5s?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Thiryuvanmiyur (Roof Covered)",
       address: "Thiruvanmiyur beach, 111, Bay View Dr St, Kottivakkam, Chennai, Tamilnadu 600041",
       phone: "+919962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Thiruvanmiyur+Beach)/@12.9688839,80.2547922,3432m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.2547922!3d12.9688839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sThiruvanmiyur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000004!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Thiruvanmiyur+Beach)/@12.9688839,80.2547922,3432m/data=!3m1!1e3!4m10!1m2!2m1!1sThiruvanmiyur+beach,+111,+Bay+View+Dr+St,+Kottivakkam,+Chennai,+Tamilnadu+600041!3m6!1s0x3a525dcbdde45771:0xa97db1e275e30698!8m2!3d12.9727355!4d80.2658124!15sClBUaGlydXZhbm1peXVyIGJlYWNoLCAxMTEsIEJheSBWaWV3IERyIFN0LCBLb3R0aXZha2thbSwgQ2hlbm5haSwgVGFtaWxuYWR1IDYwMDA0MZIBDGZ1dHNhbF9maWVsZKoBdBABMh8QASIbsbR073W69V4DZWEpm4QdrA5MXEVNmaJcqYC-Mk8QAiJLdGhpcnV2YW5taXl1ciBiZWFjaCAxMTEgYmF5IHZpZXcgZHIgc3Qga290dGl2YWtrYW0gY2hlbm5haSB0YW1pbG5hZHUgNjAwMDQx4AEA!16s%2Fg%2F11jzcwz8sc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Thiruvanmiyur+Beach)/@12.9688839,80.2547922,3432m/data=!3m1!1e3!4m10!1m2!2m1!1sThiruvanmiyur+beach,+111,+Bay+View+Dr+St,+Kottivakkam,+Chennai,+Tamilnadu+600041!3m6!1s0x3a525dcbdde45771:0xa97db1e275e30698!8m2!3d12.9727355!4d80.2658124!15sClBUaGlydXZhbm1peXVyIGJlYWNoLCAxMTEsIEJheSBWaWV3IERyIFN0LCBLb3R0aXZha2thbSwgQ2hlbm5haSwgVGFtaWxuYWR1IDYwMDA0MZIBDGZ1dHNhbF9maWVsZKoBdBABMh8QASIbsbR073W69V4DZWEpm4QdrA5MXEVNmaJcqYC-Mk8QAiJLdGhpcnV2YW5taXl1ciBiZWFjaCAxMTEgYmF5IHZpZXcgZHIgc3Qga290dGl2YWtrYW0gY2hlbm5haSB0YW1pbG5hZHUgNjAwMDQx4AEA!16s%2Fg%2F11jzcwz8sc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Madipakkam",
       address: "200, 9th St, behind Dr.KAMAKSHI MEMORIAL HOSPITAL, Madipakkam, Chennai-600091",
       phone: "+919962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF/@12.9514122,80.2017817,858m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.2017817!3d12.9514122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sMadipakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000005!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF/@12.9514122,80.2017817,858m/data=!3m1!1e3!4m9!1m2!2m1!1s200,+9th+St,+behind+Dr.KAMAKSHI+MEMORIAL+HOSPITAL,+Madipakkam,+Chennai-60009!3m5!1s0x3a525d2cecb058cf:0x2256deee37b67f68!8m2!3d12.9514128!4d80.2065957!16s%2Fg%2F11fnjz25nc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF/@12.9514122,80.2017817,858m/data=!3m1!1e3!4m9!1m2!2m1!1s200,+9th+St,+behind+Dr.KAMAKSHI+MEMORIAL+HOSPITAL,+Madipakkam,+Chennai-60009!3m5!1s0x3a525d2cecb058cf:0x2256deee37b67f68!8m2!3d12.9514128!4d80.2065957!16s%2Fg%2F11fnjz25nc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Kovilambakkam",
       address: "Manikandan street, Veeramani Nagar, Kovilambakkam, Chennai-600117",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+-+Kovilambakkam/@12.9439708,80.1748446,1716m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.1748446!3d12.9439708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sKovilambakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000006!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+-+Kovilambakkam/@12.9439708,80.1748446,1716m/data=!3m1!1e3!4m10!1m2!2m1!1sfcm+turf+kovilambakkam!3m6!1s0x3a525f032a02aef5:0xe8b80cc0f399493a!8m2!3d12.9439708!4d80.1812475!15sChZmY20gdHVyZiBrb3ZpbGFtYmFra2FtWhgiFmZjbSB0dXJmIGtvdmlsYW1iYWtrYW2SAQ1zcG9ydHNfc2Nob29smgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5UVU52TWpWaVoyMW5SUkFCqgFNEAEqDCIIZmNtIHR1cmYoADIfEAEiG1x6lvjwy6HVixkmD9CYIhTywaImiFTIx92ZRDIaEAIiFmZjbSB0dXJmIGtvdmlsYW1iYWtrYW3gAQD6AQQIABBG!16s%2Fg%2F11x1849nh5?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+-+Kovilambakkam/@12.9439708,80.1748446,1716m/data=!3m1!1e3!4m10!1m2!2m1!1sfcm+turf+kovilambakkam!3m6!1s0x3a525f032a02aef5:0xe8b80cc0f399493a!8m2!3d12.9439708!4d80.1812475!15sChZmY20gdHVyZiBrb3ZpbGFtYmFra2FtWhgiFmZjbSB0dXJmIGtvdmlsYW1iYWtrYW2SAQ1zcG9ydHNfc2Nob29smgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5UVU52TWpWaVoyMW5SUkFCqgFNEAEqDCIIZmNtIHR1cmYoADIfEAEiG1x6lvjwy6HVixkmD9CYIhTywaImiFTIx92ZRDIaEAIiFmZjbSB0dXJmIGtvdmlsYW1iYWtrYW3gAQD6AQQIABBG!16s%2Fg%2F11x1849nh5?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Perumbakkam",
       address: "260/2A, Radiance Mercury, opp. to Radiance Mercury, Cheran Nagar, Chennai, Tamil Nadu 600100",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Perumbakkam)/@12.9439699,80.1593948,6864m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.1593948!3d12.9439699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sPerumbakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000007!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Perumbakkam)/@12.9439699,80.1593948,6864m/data=!3m1!1e3!4m10!1m2!2m1!1sfcm+turf+perumbakkam!3m6!1s0x3a525bc901a4dd2d:0x5f55802ea9ddaa03!8m2!3d12.8949194!4d80.2012451!15sChRmY20gdHVyZiBwZXJ1bWJha2thbVoWIhRmY20gdHVyZiBwZXJ1bWJha2thbZIBDWZvb3RiYWxsX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblRVTnZNaTFUUjBWUkVBRaoBSxABKgwiCGZjbSB0dXJmKAAyHxABIhsYLsBMDDUxZJ6kEOn8bf5qVoDKT0M10my-KMAyGBACIhRmY20gdHVyZiBwZXJ1bWJha2thbeABAPoBBAgrEEw!16s%2Fg%2F11rh_44jh6?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Perumbakkam)/@12.9439699,80.1593948,6864m/data=!3m1!1e3!4m10!1m2!2m1!1sfcm+turf+perumbakkam!3m6!1s0x3a525bc901a4dd2d:0x5f55802ea9ddaa03!8m2!3d12.8949194!4d80.2012451!15sChRmY20gdHVyZiBwZXJ1bWJha2thbVoWIhRmY20gdHVyZiBwZXJ1bWJha2thbZIBDWZvb3RiYWxsX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblRVTnZNaTFUUjBWUkVBRaoBSxABKgwiCGZjbSB0dXJmKAAyHxABIhsYLsBMDDUxZJ6kEOn8bf5qVoDKT0M10my-KMAyGBACIhRmY20gdHVyZiBwZXJ1bWJha2thbeABAPoBBAgrEEw!16s%2Fg%2F11rh_44jh6?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina West Tambaram (Roof Covered)",
       address: "No 18 Karumariamman Nagar, Wwst, near Vishnu Nagar, Tambaram, Chennai-600045",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(+TAMBARAM)/@12.9230718,80.0972868,858m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.0972868!3d12.9230718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sTambaram%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000008!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(+TAMBARAM)/@12.9230718,80.0972868,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a525f4f6b1283a3:0x8f3a73cfea038807!8m2!3d12.9230718!4d80.0998617!16s%2Fg%2F11kplb681y?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(+TAMBARAM)/@12.9230718,80.0972868,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a525f4f6b1283a3:0x8f3a73cfea038807!8m2!3d12.9230718!4d80.0998617!16s%2Fg%2F11kplb681y?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Medavakkam",
       address: "N0. 299/1A Bhavaniamman Koil Street, Pallikaranai, chennai-600100",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+Medavakkam/@12.9230589,80.0174597,27460m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.0174597!3d12.9230589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sMedavakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000009!5m2!1sen!2sin"
+      mapurl: "https://www.google.co.in/maps/place/FC+Marina+Academy+Medavakkam/@12.9230589,80.0174597,27460m/data=!3m1!1e3!4m10!1m2!2m1!1sFC+MARINA+TURF+medavakkam!3m6!1s0x3a525df1eefd6005:0x96528214ca17781b!8m2!3d12.9302167!4d80.1965593!15sChlGQyBNQVJJTkEgVFVSRiBtZWRhdmFra2FtWhsiGWZjIG1hcmluYSB0dXJmIG1lZGF2YWtrYW2SAQtzcG9ydHNfY2x1YpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSZk1UaFBUMUpCRUFFqgFRCg0vZy8xMWZuanoyNW5jEAEyHxABIhsYMnScSEJlD-I8KkylT6QukdIGKAd7IOhd_gkyHRACIhlmYyBtYXJpbmEgdHVyZiBtZWRhdmFra2Ft4AEA-gEECAAQRg!16s%2Fg%2F11x1fr34sl?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+Medavakkam/@12.9230589,80.0174597,27460m/data=!3m1!1e3!4m10!1m2!2m1!1sFC+MARINA+TURF+medavakkam!3m6!1s0x3a525df1eefd6005:0x96528214ca17781b!8m2!3d12.9302167!4d80.1965593!15sChlGQyBNQVJJTkEgVFVSRiBtZWRhdmFra2FtWhsiGWZjIG1hcmluYSB0dXJmIG1lZGF2YWtrYW2SAQtzcG9ydHNfY2x1YpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSZk1UaFBUMUpCRUFFqgFRCg0vZy8xMWZuanoyNW5jEAEyHxABIhsYMnScSEJlD-I8KkylT6QukdIGKAd7IOhd_gkyHRACIhlmYyBtYXJpbmEgdHVyZiBtZWRhdmFra2Ft4AEA-gEECAAQRg!16s%2Fg%2F11x1fr34sl?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Mugalivakkam",
       address: "7, Roja Street, Maxworth Nagar Phase 2, Kolapakkam chennai-600116",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/Marina+FC/@13.0176393,80.0890062,13725m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.0890062!3d13.0176393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sMugalivakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000010!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/Marina+FC/@13.0176393,80.0890062,13725m/data=!3m1!1e3!4m10!1m2!2m1!1sfc+marina+turf+mugalivakkam!3m6!1s0x3a52615a4b4c2cad:0x3f95722577ce8bc4!8m2!3d13.0176393!4d80.1652239!15sChtmYyBtYXJpbmEgdHVyZiBtdWdhbGl2YWtrYW1aHSIbZmMgbWFyaW5hIHR1cmYgbXVnYWxpdmFra2FtkgEPY29hY2hpbmdfY2VudGVymgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ4c2VWWnNPVVJPTWtaNlpVZGtiRnBYYjNST01VWnRVMjVaTWxSSVl4QUKqAVMKDS9nLzExZm5qejI1bmMQATIfEAEiGxe8JnEBFEvLIdo0fpPrFkQ8mUzlJzvwCjxdtDIfEAIiG2ZjIG1hcmluYSB0dXJmIG11Z2FsaXZha2thbeABAPoBBQigAhBM!16s%2Fg%2F11j218qyxc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/Marina+FC/@13.0176393,80.0890062,13725m/data=!3m1!1e3!4m10!1m2!2m1!1sfc+marina+turf+mugalivakkam!3m6!1s0x3a52615a4b4c2cad:0x3f95722577ce8bc4!8m2!3d13.0176393!4d80.1652239!15sChtmYyBtYXJpbmEgdHVyZiBtdWdhbGl2YWtrYW1aHSIbZmMgbWFyaW5hIHR1cmYgbXVnYWxpdmFra2FtkgEPY29hY2hpbmdfY2VudGVymgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ4c2VWWnNPVVJPTWtaNlpVZGtiRnBYYjNST01VWnRVMjVaTWxSSVl4QUKqAVMKDS9nLzExZm5qejI1bmMQATIfEAEiGxe8JnEBFEvLIdo0fpPrFkQ8mUzlJzvwCjxdtDIfEAIiG2ZjIG1hcmluYSB0dXJmIG11Z2FsaXZha2thbeABAPoBBQigAhBM!16s%2Fg%2F11j218qyxc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       name: "FC Marina Pallikaranai",
       address: "Ambal nagar, Pallikaranai, Chennai-600100",
       phone: "+91 9962220400",
-      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+Pallikaranai/@12.9363544,80.1748158,3432m/",
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8155087959673!2d80.1748158!3d12.9363544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c4ddf2b031%3A0x1d69b7a3d0c0d5b4!2sPallikaranai%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1735000000011!5m2!1sen!2sin"
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+Pallikaranai/@12.9363544,80.1748158,3432m/data=!3m1!1e3!4m10!1m2!2m1!1sfc+marina+turf+pallikaranai!3m6!1s0x3a525d99dd794d61:0x9d2ebb76aa2d3d65!8m2!3d12.9363544!4d80.1938702!15sChtmYyBtYXJpbmEgdHVyZiBwYWxsaWthcmFuYWlaHSIbZmMgbWFyaW5hIHR1cmYgcGFsbGlrYXJhbmFpkgELc29jY2VyX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTllOemRmTFV4M0VBRaoBUwoNL2cvMTFmbmp6MjVuYxABMh8QASIbGJLnKBvekZyZDExdcqZLOdBmEa8cvu84Fn8fMh8QAiIbZmMgbWFyaW5hIHR1cmYgcGFsbGlrYXJhbmFp4AEA-gEECAAQRA!16s%2Fg%2F11sw8vxtwr?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+Pallikaranai/@12.9363544,80.1748158,3432m/data=!3m1!1e3!4m10!1m2!2m1!1sfc+marina+turf+pallikaranai!3m6!1s0x3a525d99dd794d61:0x9d2ebb76aa2d3d65!8m2!3d12.9363544!4d80.1938702!15sChtmYyBtYXJpbmEgdHVyZiBwYWxsaWthcmFuYWlaHSIbZmMgbWFyaW5hIHR1cmYgcGFsbGlrYXJhbmFpkgELc29jY2VyX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTllOemRmTFV4M0VBRaoBUwoNL2cvMTFmbmp6MjVuYxABMh8QASIbGJLnKBvekZyZDExdcqZLOdBmEa8cvu84Fn8fMh8QAiIbZmMgbWFyaW5hIHR1cmYgcGFsbGlrYXJhbmFp4AEA-gEECAAQRA!16s%2Fg%2F11sw8vxtwr?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D"
     }
   ];
 
@@ -167,7 +167,7 @@ const Contact = () => {
           className="text-center mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow">
-            Get In <span className="gradient-text">Touch</span>
+            Get In Touch
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto text-shadow px-4">
             Have questions about our turfs or need help with bookings? We're here to help you 24/7.

@@ -8,53 +8,55 @@ const Gallery = () => {
 
   const galleryImages = [
     {
-      src: "https://fcmbookings-com.stackstaging.com/wp-content/uploads/2025/06/2K6A6069-scaled.jpg",
-      caption: "Premium Football Turf with Floodlights"
+      src: "/venue-images/184A5381.JPG",
+      caption: "FC Marina Vanagaram"
     },
     {
-      src: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "State-of-the-art Artificial Grass"
+      src: "/venue-images/184A5382.JPG",
+      caption: "FC Marina Porur (Keppel)"
     },
     {
-      src: "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Professional Standard Football Field"
+      src: "/venue-images/184A5383.JPG",
+      caption: "FC Marina Nolambur"
     },
     {
-      src: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Well-maintained Grass Pitch"
+      src: "/venue-images/184A5384.JPG",
+      caption: "FC Marina Thalambur"
     },
     {
-      src: "https://images.pexels.com/photos/1657349/pexels-photo-1657349.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Modern Turf Facilities"
+      src: "/venue-images/2K6A6042.JPG",
+      caption: "FC Marina Thiruvanmiyur"
     },
     {
-      src: "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Evening Football Sessions"
+      src: "/venue-images/2K6A6043.JPG",
+      caption: "FC Marina Madipakkam"
     },
     {
-      src: "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Training and Practice Areas"
+      src: "/venue-images/2K6A6044.JPG",
+      caption: "FC Marina Kovilambakkam"
     },
     {
-      src: "https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Tournament Ready Facilities"
+      src: "/venue-images/2K6A6045.JPG",
+      caption: "FC Marina Perumbakkam"
     },
     {
-      src: "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Kids Football Programs"
+      src: "/venue-images/2K6A6046.JPG",
+      caption: "FC Marina West Tambaram"
     },
     {
-      src: "https://images.pexels.com/photos/1752775/pexels-photo-1752775.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Corporate Team Building Events"
+      src: "/venue-images/2K6A6047.JPG",
+      caption: "FC Marina Medavakkam"
     },
     {
-      src: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Weekend Football Leagues"
+      src: "/venue-images/2K6A6048.JPG",
+      caption: "FC Marina Mugalivakkam"
     },
     {
-      src: "https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=800",
-      caption: "Professional Coaching Sessions"
-    }
+      src: "/venue-images/2K6A6049.JPG",
+      caption: "FC Marina Pallikaranai"
+    },
+    
+    // Add more images as needed
   ];
 
   const nextImage = () => {
@@ -94,7 +96,7 @@ const Gallery = () => {
           className="text-center mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow">
-            Our <span className="gradient-text">Gallery</span>
+            Our <span>Gallery</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto text-shadow px-4">
             Explore our world-class football turf facilities across Chennai. See why we're the preferred choice for football enthusiasts.

@@ -12,10 +12,11 @@ const Bookings = () => {
       address: "113/77, Chettiyar Agaram Rd, Numbal, Vanagaram, Chennai-600077",
       rating: 4.8,
       price: "₹1,500/hour",
-      image: "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6045.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "Artifical Football Turf", "With Outs"],
-      mapUrl: "https://www.google.co.in/maps/place/113,+Chettiyar+Agaram+Rd,+Chettiyar+Agaram,+Porur,+Chennai,",
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+-+Centre+of+Excellence/@13.0546361,80.1488909,851m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5261ff119b5dfd:0x2b7eac202ee7814e!8m2!3d13.0546361!4d80.1488909!16s%2Fg%2F11y6n_n6d_?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
+      
     },
     {
       id: 2,
@@ -23,9 +24,9 @@ const Bookings = () => {
       address: "Keppal Software park Pvt Ltd, One Paramount, 110, Mount Poonamalle Rd, Porur, Chennai-600125",
       rating: 4.9,
       price: "₹1,500/hour",
-      image: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6046.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available"],
-      mapUrl: "https://www.google.co.in/maps/place/Keppel+Software+Park,Pvt+Ltd./@13.0322309,80.1666229,1080m/",
+      mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Porur+Turf/@13.0311527,80.1646972,1122m/data=!3m1!1e3!4m6!3m5!1s0x3a5261a3809205f1:0x97227fb8be73c538!8m2!3d13.0310078!4d80.1682374!16s%2Fg%2F11xmd0sryw?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
     },
     {
@@ -34,7 +35,7 @@ const Bookings = () => {
       address: "230 4th Main Road, Apartments, opp. VGN Flats, Nolambur, Chennai-600095",
       rating: 4.7,
       price: "₹1,500/hour",
-      image: "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6047.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "shower", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Turf+(Nolambur)/@13.0772497,80.1627306,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a526158a80e9739:0x44f592770ade844a!8m2!3d13.0772497!4d80.1653055!16s%2Fg%2F11rgzwbtbg?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -45,7 +46,7 @@ const Bookings = () => {
       address: "No.6/858 Thiruvalluvar Street, Natham, thalambur, Chennai-600130",
       rating: 4.6,
       price: "₹1,200/hour",
-      image: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6048.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "Roof Covered", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+FOOTBALL+ACADEMY/@12.8540869,80.199116,3433m/data=!3m1!1e3!4m10!1m2!2m1!1sNo.6%2F858+Thiruvalluvar+Street,+Natham,+thalambur,+Chennai-600130%22!3m6!1s0x3a525b766d066039:0x52a8490aa73700b5!8m2!3d12.8400089!4d80.2144489!15sCkFOby42Lzg1OCBUaGlydXZhbGx1dmFyIFN0cmVldCwgTmF0aGFtLCB0aGFsYW1idXIsIENoZW5uYWktNjAwMTMwIlo_Ij1ubyA2IDg1OCB0aGlydXZhbGx1dmFyIHN0cmVldCBuYXRoYW0gdGhhbGFtYnVyIGNoZW5uYWkgNjAwMTMwkgELc29jY2VyX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlFNWFV6ZEVoUkVBRaoBchABKgoiBm5hdGhhbSgAMh8QASIbTw_bhixSuMfKCaGFxP6Ecg9MsdvnX3nafVTPMkEQAiI9bm8gNiA4NTggdGhpcnV2YWxsdXZhciBzdHJlZXQgbmF0aGFtIHRoYWxhbWJ1ciBjaGVubmFpIDYwMDEzMOABAPoBBAgAEDQ!16s%2Fg%2F11l36ggg5s?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -56,7 +57,7 @@ const Bookings = () => {
       address: "Thiruvanmiyur beach, 111, Bay View Dr St, Kottivakkam, Chennai, Tamilnadu 600041",
       rating: 4.8,
       price: "₹1,950/hour",
-      image: "https://images.pexels.com/photos/1657349/pexels-photo-1657349.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6049.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "shower", "Roof Covered", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Thiruvanmiyur+Beach)/@12.9688839,80.2547922,3432m/data=!3m1!1e3!4m10!1m2!2m1!1sThiruvanmiyur+beach,+111,+Bay+View+Dr+St,+Kottivakkam,+Chennai,+Tamilnadu+600041!3m6!1s0x3a525dcbdde45771:0xa97db1e275e30698!8m2!3d12.9727355!4d80.2658124!15sClBUaGlydXZhbm1peXVyIGJlYWNoLCAxMTEsIEJheSBWaWV3IERyIFN0LCBLb3R0aXZha2thbSwgQ2hlbm5haSwgVGFtaWxuYWR1IDYwMDA0MZIBDGZ1dHNhbF9maWVsZKoBdBABMh8QASIbsbR073W69V4DZWEpm4QdrA5MXEVNmaJcqYC-Mk8QAiJLdGhpcnV2YW5taXl1ciBiZWFjaCAxMTEgYmF5IHZpZXcgZHIgc3Qga290dGl2YWtrYW0gY2hlbm5haSB0YW1pbG5hZHUgNjAwMDQx4AEA!16s%2Fg%2F11jzcwz8sc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+919962220400"
@@ -67,7 +68,7 @@ const Bookings = () => {
       address: "200, 9th St, behind Dr.KAMAKSHI MEMORIAL HOSPITAL, Madipakkam, Chennai-600091",
       rating: 4.9,
       price: "₹1,500/hour",
-      image: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6050.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF/@12.9514122,80.2017817,858m/data=!3m1!1e3!4m9!1m2!2m1!1s200,+9th+St,+behind+Dr.KAMAKSHI+MEMORIAL+HOSPITAL,+Madipakkam,+Chennai-60009!3m5!1s0x3a525d2cecb058cf:0x2256deee37b67f68!8m2!3d12.9514128!4d80.2065957!16s%2Fg%2F11fnjz25nc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+919962220400"
@@ -79,7 +80,7 @@ const Bookings = () => {
       address: "Manikandan street, Veeramani Nagar, Kovilambakkam, Chennai-600117",
       rating: 4.7,
       price: "₹1,200/hour",
-      image: "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/184A5381.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available"],
       mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+-+Kovilambakkam/@12.9439708,80.1748446,1716m/data=!3m1!1e3!4m10!1m2!2m1!1sfcm+turf+kovilambakkam!3m6!1s0x3a525f032a02aef5:0xe8b80cc0f399493a!8m2!3d12.9439708!4d80.1812475!15sChZmY20gdHVyZiBrb3ZpbGFtYmFra2FtWhgiFmZjbSB0dXJmIGtvdmlsYW1iYWtrYW2SAQ1zcG9ydHNfc2Nob29smgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5UVU52TWpWaVoyMW5SUkFCqgFNEAEqDCIIZmNtIHR1cmYoADIfEAEiG1x6lvjwy6HVixkmD9CYIhTywaImiFTIx92ZRDIaEAIiFmZjbSB0dXJmIGtvdmlsYW1iYWtrYW3gAQD6AQQIABBG!16s%2Fg%2F11x1849nh5?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -90,7 +91,7 @@ const Bookings = () => {
       address: "260/2A, Radiance Mercury, opp. to Radiance Mercury, Cheran Nagar, Chennai, Tamil Nadu 600100",
       rating: 4.8,
       price: "₹1,000/hour",
-      image: "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/184A5382.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "shower", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(Perumbakkam)/@12.9439699,80.1593948,6864m/data=!3m1!1e3!4m10!1m2!2m1!1sfcm+turf+perumbakkam!3m6!1s0x3a525bc901a4dd2d:0x5f55802ea9ddaa03!8m2!3d12.8949194!4d80.2012451!15sChRmY20gdHVyZiBwZXJ1bWJha2thbVoWIhRmY20gdHVyZiBwZXJ1bWJha2thbZIBDWZvb3RiYWxsX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblRVTnZNaTFUUjBWUkVBRaoBSxABKgwiCGZjbSB0dXJmKAAyHxABIhsYLsBMDDUxZJ6kEOn8bf5qVoDKT0M10my-KMAyGBACIhRmY20gdHVyZiBwZXJ1bWJha2thbeABAPoBBAgrEEw!16s%2Fg%2F11rh_44jh6?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -101,7 +102,7 @@ const Bookings = () => {
       address: "No 18 Karumariamman Nagar, Wwst, near Vishnu Nagar, Tambaram, Chennai-600045",
       rating: 4.6,
       price: "₹1,400/hour",
-      image: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/184A5383.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "Roof Covered", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+MARINA+TURF+(+TAMBARAM)/@12.9230718,80.0972868,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a525f4f6b1283a3:0x8f3a73cfea038807!8m2!3d12.9230718!4d80.0998617!16s%2Fg%2F11kplb681y?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -112,7 +113,7 @@ const Bookings = () => {
       address: "N0. 299/1A Bhavaniamman Koil Street, Pallikaranai, chennai-600100",
       rating: 4.9,
       price: "₹1,000/hour",
-      image: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6042.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available"],
       mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Academy+Medavakkam/@12.9230589,80.0174597,27460m/data=!3m1!1e3!4m10!1m2!2m1!1sFC+MARINA+TURF+medavakkam!3m6!1s0x3a525df1eefd6005:0x96528214ca17781b!8m2!3d12.9302167!4d80.1965593!15sChlGQyBNQVJJTkEgVFVSRiBtZWRhdmFra2FtWhsiGWZjIG1hcmluYSB0dXJmIG1lZGF2YWtrYW2SAQtzcG9ydHNfY2x1YpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSZk1UaFBUMUpCRUFFqgFRCg0vZy8xMWZuanoyNW5jEAEyHxABIhsYMnScSEJlD-I8KkylT6QukdIGKAd7IOhd_gkyHRACIhlmYyBtYXJpbmEgdHVyZiBtZWRhdmFra2Ft4AEA-gEECAAQRg!16s%2Fg%2F11x1fr34sl?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -123,7 +124,7 @@ const Bookings = () => {
       address: "7, Roja Street, Maxworth Nagar Phase 2, Kolapakkam chennai-600116",
       rating: 4.7,
       price: "₹1,200/hour",
-      image: "https://images.pexels.com/photos/1657349/pexels-photo-1657349.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6043.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available","Shower", "Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/Marina+FC/@13.0176393,80.0890062,13725m/data=!3m1!1e3!4m10!1m2!2m1!1sfc+marina+turf+mugalivakkam!3m6!1s0x3a52615a4b4c2cad:0x3f95722577ce8bc4!8m2!3d13.0176393!4d80.1652239!15sChtmYyBtYXJpbmEgdHVyZiBtdWdhbGl2YWtrYW1aHSIbZmMgbWFyaW5hIHR1cmYgbXVnYWxpdmFra2FtkgEPY29hY2hpbmdfY2VudGVymgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ4c2VWWnNPVVJPTWtaNlpVZGtiRnBYYjNST01VWnRVMjVaTWxSSVl4QUKqAVMKDS9nLzExZm5qejI1bmMQATIfEAEiGxe8JnEBFEvLIdo0fpPrFkQ8mUzlJzvwCjxdtDIfEAIiG2ZjIG1hcmluYSB0dXJmIG11Z2FsaXZha2thbeABAPoBBQigAhBM!16s%2Fg%2F11j218qyxc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -134,7 +135,7 @@ const Bookings = () => {
       address: "Ambal nagar, Pallikaranai, Chennai-600100",
       rating: 4.8,
       price: "₹1,200/hour",
-      image: "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/venue-images/2K6A6044.JPG",
       facilities: ["UPI Accepted", "Toilets", "Changing Rooms", "Free Parking", "Bips Available", "Shower", "Card Accepted","Artifical Football Turf", "With Outs"],
       mapUrl: "https://www.google.co.in/maps/place/FC+Marina+Football+Academy+Pallikaranai/@12.9363544,80.1748158,3432m/data=!3m1!1e3!4m10!1m2!2m1!1sfc+marina+turf+pallikaranai!3m6!1s0x3a525d99dd794d61:0x9d2ebb76aa2d3d65!8m2!3d12.9363544!4d80.1938702!15sChtmYyBtYXJpbmEgdHVyZiBwYWxsaWthcmFuYWlaHSIbZmMgbWFyaW5hIHR1cmYgcGFsbGlrYXJhbmFpkgELc29jY2VyX2NsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTllOemRmTFV4M0VBRaoBUwoNL2cvMTFmbmp6MjVuYxABMh8QASIbGJLnKBvekZyZDExdcqZLOdBmEa8cvu84Fn8fMh8QAiIbZmMgbWFyaW5hIHR1cmYgcGFsbGlrYXJhbmFp4AEA-gEECAAQRA!16s%2Fg%2F11sw8vxtwr?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D",
       phone: "+91 9962220400"
@@ -165,7 +166,7 @@ const Bookings = () => {
           className="text-center mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow">
-            Book Your <span className="gradient-text">Perfect Turf</span>
+            Book Your Perfect Turf
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto text-shadow px-4">
             Choose from our 12 premium football turfs across Chennai. Download our app for instant booking and better deals.
