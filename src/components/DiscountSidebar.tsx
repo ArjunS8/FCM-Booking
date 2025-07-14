@@ -173,7 +173,7 @@ const DiscountSidebar = () => {
               animate={{ 
                 opacity: 1, 
                 scale: 1,
-                x: -350,
+                x: -25,
                 y: -200
               }}
               exit={{ 
